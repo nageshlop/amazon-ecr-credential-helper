@@ -1,0 +1,16 @@
+language: go
+sudo: false
+arch:
+    - amd64
+    - ppc64le
+os:
+    - linux
+    - osx
+go:
+    - "1.14"
+    - "1.15"
+go_import_path: github.com/awslabs/amazon-ecr-credential-helper
+install: make get-deps
+script:
+    - make all-variants
+    - make test
